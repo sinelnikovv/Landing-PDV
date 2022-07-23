@@ -59,6 +59,17 @@
   }
 }
 
+.section_features {
+  margin-bottom: -125px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: -24px;
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-bottom: -105px;
+  }
+}
+
 .relative_top {
   position: relative;
   top: -125px;
@@ -123,5 +134,106 @@
     padding: 0px 120px 0px 64px;
     border-right: 1px solid #d7d7dd;
     margin-bottom: 0;
+  }
+}
+
+.title_question {
+  margin-bottom: 32px;
+}
+
+.text_question {
+  margin-bottom: 48px;
+  @media screen and (min-width: 992px) {
+    margin-bottom: 40px;
+  }
+}
+
+.question {
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 30px;
+    left: 16px;
+    height: 24px;
+    width: 24px;
+    background: #ffffff;
+    border: 1px solid #cbcbcd;
+    border-radius: 50%;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: 768px) {
+      top: 40px;
+      left: 34px;
+    }
+
+    @media screen and (min-width: 992px) {
+      top: 50px;
+      left: 40px;
+    }
+  }
+
+  &:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: 6px;
+    top: 6px;
+    background: #0b7572;
+    position: absolute;
+    display: none;
+  }
+
+  &_title {
+    margin-bottom: 16px;
+  }
+
+  &_label {
+    cursor: pointer;
+    position: relative;
+    max-width: 690px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 30px 24px 32px 55px;
+    margin-bottom: 10px;
+  }
+
+  input:checked + label .checkmark:after {
+    display: block;
+  }
+
+  input:checked + label {
+    border: 1px solid #0b7572;
+  }
+
+  @media screen and (min-width: 768px) {
+    &_label {
+      padding: 40px 125px 50px 95px;
+      background: url(img/bg_label.svg) no-repeat right bottom;
+    }
+  }
+
+  &_results {
+    font-size: 20px;
+    padding-top: 170px;
+    padding-left: 100px;
+
+    &__underline {
+      display: inline-block;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #ffce50;
+    }
+
+    &_number {
+      font-size: 54px;
+      color: #000;
+    }
   }
 }
